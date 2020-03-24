@@ -1,7 +1,6 @@
-income = int(input('请输入您的薪资：'))
-salary = 0
+import sys
 
-tax = 0
+# income = int(input('请输入您的薪资：'))
 
 def calculate(num):
     shouldPay = num - 5000
@@ -20,15 +19,32 @@ def calculate(num):
         tax = shouldPay * 0.3 - 4410
     elif 55000 < shouldPay <= 80000:
         tax = shouldPay * 0.35 - 7160
-    elif 80000 < shouldPay:
+    else:
         tax = shouldPay * 0.45 - 15160
-    return tax
+    salary = num - tax
+    return '{.2f}'.format(salary)
 
-tax = calculate(income)
-salary = income - tax
+def main():
+    # 循环处理每一个用户
+    sys.argv[:] = input(print('请输入员工号及薪资，用"："隔开：'))
+    # for item in sys.argv[1:]:
+    #     id, income = item.split(':')
+    #     try:
+    #         income = int(income)
+    #     except ValueError:
+    #         print('请在薪资的位置输入数字')
+    #         continue
+    #     print('员工ID{}，薪资{}'.format(id,calculate(income)))
 
-print('你的税费是：{:.2f}'.format(tax))
-print('税后所得：{:.2f}'.format(salary))
+if __name__ == '__main__':
+    main()
+
+
+# tax = calculate(income)
+# salary = income - tax
+
+# print('你的税费是：{:.2f}'.format(tax))
+# print('税后所得：{:.2f}'.format(salary))
 
 
 ## 定义变量
