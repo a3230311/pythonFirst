@@ -22,19 +22,19 @@ def calculate(num):
     else:
         tax = shouldPay * 0.45 - 15160
     salary = num - tax
-    return '{.2f}'.format(salary)
+    return '{:.2f}'.format(salary)
 
 def main():
+    print('请输入多个员工ID和税钱薪资（用:隔开）：')
     # 循环处理每一个用户
-    sys.argv[:] = input(print('请输入员工号及薪资，用"："隔开：'))
-    # for item in sys.argv[1:]:
-    #     id, income = item.split(':')
-    #     try:
-    #         income = int(income)
-    #     except ValueError:
-    #         print('请在薪资的位置输入数字')
-    #         continue
-    #     print('员工ID{}，薪资{}'.format(id,calculate(income)))
+    for item in sys.argv[1:]:
+        id, income = item.split(':')
+        try:
+            income = int(income)
+        except ValueError:
+            print('请在薪资的位置输入数字')
+            continue
+        print('员工ID{}，薪资{}'.format(id,calculate(income)))
 
 if __name__ == '__main__':
     main()

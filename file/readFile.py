@@ -39,5 +39,5 @@ import io
 #
 # print('复制成功')
 
-listF2 = open('file2.py', 'rb')
-print(listF2.read())
+listF2 = open('file2.py', 'r')
+print(listF2.readlines())
