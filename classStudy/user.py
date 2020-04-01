@@ -98,7 +98,6 @@ def check_user(email, password):
     return
 
 def main():
-    userList = []
     print('————————————欢迎———————————')
     while 1:
         choose = int(input('''
