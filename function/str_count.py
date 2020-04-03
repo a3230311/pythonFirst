@@ -54,6 +54,8 @@ def main():
     print(sorted(numList, key=abs))
 
     pp = [('Leborn James', 98), ('Kevin Durant', 97), ('James Harden', 96), ('Stephen Curry', 95),('Anthony Davis', 94)]
+    pp_dict = {'Leborn James': 98, 'Kevin Durant': 97, 'James Harden': 96, 'Stephen Curry': 95,'Anthony Davis': 94}
+    tuple1 = ('tomy', '30')
 
     print(sorted(pp))
 
@@ -76,6 +78,19 @@ def main():
     # 使用lambda函数（lambda后面跟的i是参数，i*2是返回值）
     print(list(map(lambda i:'{:.2f}'.format(i*2*pi), numList)))
     print(list(map(lambda i:i[0].lower(), pp)))
+    print(list(map(lambda i:i[0].upper(), pp)))
+
+    # 使用列表解析
+    print([x for x in numList if x < 0])
+
+    # 使用字典解析
+    print({k:v for k,v in pp_dict.items() if v > 95})
+
+    # 元祖拆包
+    print(*tuple1)
+    print('I\'m {}, and my age is {}'.format(*tuple1))
+    a, *b, c = range(0,10)
+    print(a,'\n',*b,'\n',c)
 
 if __name__ == '__main__':
     main()
